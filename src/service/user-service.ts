@@ -1,4 +1,11 @@
-// import { User } from "../entitys/user";
+import { UserRepository } from "../repositorys/user-repo";
 
-// const userRepo = new User
-// const user1 = new User('Kent', "Mark", "+998971085000", '1234abcd', 20);
+export class UserService extends UserRepository {
+  signIn(phoneNumber: string, password: string) {
+    let user = this.getUserByPhoneNumber(phoneNumber);
+
+    if (user?.password !== password) throw new Error("Xato parol");
+
+    return user;
+  }
+}

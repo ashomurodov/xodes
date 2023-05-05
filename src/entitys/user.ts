@@ -2,13 +2,13 @@ import { Card } from "./card";
 
 export class User {
   private userID!: number;
-  constructor(public firstName: string, public lastName: string, public phoneNumber: string, private password: string, public age: number) {}
+  constructor(public firstName: string, public lastName: string, public phoneNumber: string, public password: string, public age: number) {}
 
   setId(value: number) {
     this.userID = value;
   }
 
-  getId(): number {
+  getId() {
     return this.userID;
   }
 
